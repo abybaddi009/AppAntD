@@ -22,15 +22,15 @@ import UserHome from "./Pages/UserHome";
 import Profile from "./Pages/Profile";
 
 function Todo() {
-  return <div>Orders</div>;
+  return <h1>Orders</h1>;
 }
 
 function Message() {
-  return <div>Notifications</div>;
+  return <h1>Notifications</h1>;
 }
 
 function Services() {
-  return <div>Services</div>;
+  return <h1>Services</h1>;
 }
 
 const Bottom: FC = () => {
@@ -74,7 +74,18 @@ const Bottom: FC = () => {
   ];
 
   return (
-    <TabBar activeKey={pathname} onChange={(value) => setRouteActive(value)}>
+    <TabBar
+      style={{
+        background: "#ffffff",
+        bottom: 0,
+        left: 0,
+        position: "fixed",
+        zIndex: 5,
+        width: "100%"
+      }}
+      activeKey={pathname}
+      onChange={(value) => setRouteActive(value)}
+    >
       {tabs.map((item) => (
         <TabBar.Item
           key={item.key}
